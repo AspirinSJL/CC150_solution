@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-void reverse_letter(char* start, char* end)
+void reverse_letter(char *start, char *end)
 {
     while (start < end)
     {
@@ -13,19 +13,19 @@ void reverse_letter(char* start, char* end)
     }
 }
 
-void reverse(char* str)
+void reverse(char *str)
 {
     if (!str)
         return;
     
     // loop invariant: [start, end) will be reversed as a word
-    char* start = str;
-    char* end = start;
+    char *start = str;
+    char *end = start;
     while (1)
     {
         if (*end != ' ' && *end != '\0')
         {
-            end++;
+            ++end;
         }
         else if (*end == ' ')
         {
@@ -33,7 +33,7 @@ void reverse(char* str)
             {
                 reverse_letter(start, end - 1);
             }
-            end++;
+            ++end;
             start = end;
         }
         else if (*end == '\0')

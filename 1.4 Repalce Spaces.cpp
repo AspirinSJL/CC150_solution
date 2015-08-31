@@ -36,14 +36,14 @@ void replace_spaces_backward(char *string, int length)
     {
         if (string[i] == ' ')
         {
-            count_space++;
+            ++count_space;
         }
     }
     int new_length = length + count_space * 2;
     int dest = new_length;
     // TODO: no effect?
 //    string[dest] = '\0';
-    dest--;
+    --dest;
     
     for (int i = length - 1; i >= 0; --i)
     {
